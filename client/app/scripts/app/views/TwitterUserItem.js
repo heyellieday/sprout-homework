@@ -1,0 +1,19 @@
+define(function (require) {
+
+    "use strict";
+
+    var $                   = require('jquery'),
+        _                   = require('underscore'),
+        Backbone            = require('backbone'),
+        Handlebars          = require('hbs!partials/TwitterUserItem');
+
+    return Backbone.View.extend({
+
+        render: function () {
+            this.$el.html(Handlebars(this.model.attributes));
+            console.log(this.model.attributes);
+            return this;
+        }
+    });
+
+});
