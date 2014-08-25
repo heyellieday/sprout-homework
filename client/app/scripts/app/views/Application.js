@@ -5,13 +5,15 @@ define(function (require) {
     var $                   = require('jquery'),
         Backbone            = require('backbone'),
         TwitterUsersView    = require('app/views/TwitterUsers'),
-        models              = require('app/models/TwitterUser'),
-        Handelbars          = require('hbs!partials/application');
+        TwitterUserModel    = require('app/models/TwitterUser'),
+        Handelbars          = require('hbs!partials/application')
+        SproutUserModel     = require('app/models/SproutUser');
 
     return Backbone.View.extend({
 
         initialize: function () {
-            this.TwitterUsers = new models.TwitterUserCollection();
+            this.TwitterUsers = new TwitterUserModel.TwitterUserCollection();
+            this.SproutUser = new SproutUserModel.SproutUser();
         },
 
         render: function () {

@@ -4,8 +4,7 @@ define(function (require) {
 
     var $           = require('jquery'),
         Backbone    = require('backbone'),
-
-        serverUrl = "http://localhost:9393";
+        serverUrl   = require('app/serverUrl');
 
     var TwitterUser = Backbone.Model.extend({
 
@@ -28,7 +27,6 @@ define(function (require) {
             var twitterUsers= [];
             for(var user in response){
                     twitterUsers.push(response[user]);
-                    console.log(user);
             }
             return twitterUsers;
         }   

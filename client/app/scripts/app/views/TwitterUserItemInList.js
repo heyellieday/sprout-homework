@@ -5,22 +5,14 @@ define(function (require) {
     var $                   = require('jquery'),
         _                   = require('underscore'),
         Backbone            = require('backbone'),
-        Handlebars          = require('hbs!partials/TwitterList');
+        Handlebars          = require('hbs!partials/TwitterUserItemInList');
 
     return Backbone.View.extend({
 
-        tagName: "div",
-
-        initialize: function () {
-            this.model.on("change", this.render, this);
-        },
-
         render: function () {
-            console.log(this.model.attributes);
             this.$el.html(Handlebars(this.model.attributes));
             return this;
         }
-        
     });
 
 });

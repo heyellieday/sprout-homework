@@ -6,7 +6,6 @@ define(function (require) {
         Backbone    = require('backbone'),
         serverUrl   = require('app/serverUrl')
 
-
     var TwitterList = Backbone.Model.extend({
 
         urlRoot: serverUrl + "/api/lists",
@@ -28,7 +27,6 @@ define(function (require) {
             var twitterLists= [];
             for(var list in response){
                     twitterLists.push(response[list]);
-                    console.log(response[list]);
             }
             return twitterLists;
         }

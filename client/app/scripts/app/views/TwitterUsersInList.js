@@ -5,22 +5,17 @@ define(function (require) {
     var $                   = require('jquery'),
         _                   = require('underscore'),
         Backbone            = require('backbone'),
-        Handlebars          = require('hbs!partials/TwitterList');
+        TwitterUserTemplate = require('app/views/TwitterUserItemInList');
 
     return Backbone.View.extend({
 
-        tagName: "div",
-
-        initialize: function () {
-            this.model.on("change", this.render, this);
-        },
-
         render: function () {
-            console.log(this.model.attributes);
-            this.$el.html(Handlebars(this.model.attributes));
+            this.$el.empty();
+            _.each(this.collection.models, function (twitterUser) {
+                this.$el.append(new TwitterUserTemplate({model:twitterUser}).render().el);
+            }, this);
             return this;
         }
-        
     });
 
 });
