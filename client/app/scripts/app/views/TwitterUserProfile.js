@@ -11,7 +11,6 @@ define(function (require) {
 
         render: function () {
             this.$el.html(Handlebars(this.model.attributes));
-            console.log(this.model.attributes);
             return this;
         },
         twitterListsCheck: function (user_id) {
@@ -25,7 +24,6 @@ define(function (require) {
                             var listView = new TwitterListsView({collection: twitterLists, el: $("#lists")});
                             listView.render();
                             _.each(twitterLists.models, function (twitterList) {
-                                console.log(twitterList.attributes.id_str);
                                 var twitterUsers = new UserModel.TwitterUserInListCollection([], {list_id: twitterList.attributes.id_str});
                                 twitterUsers.fetch({
                                     success: function (data) {

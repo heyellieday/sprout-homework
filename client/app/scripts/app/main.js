@@ -26,7 +26,6 @@ define(function (require) {
             	twitterUsers.fetch({
                     success: function (data) {
                         var view = new TwitterUsersView({collection: data, el: $content});
-                        console.log(data);
                         view.render();
                     }
                 });

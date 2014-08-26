@@ -6,7 +6,7 @@ define(function (require) {
         Backbone    = require('backbone'),
         serverUrl   = require('app/serverUrl'),
 
-    SproutUser = Backbone.Model.extend({
+        SproutUser = Backbone.Model.extend({
 
         url: serverUrl + "/api/sprout-user",
 
@@ -16,7 +16,7 @@ define(function (require) {
 
     }),
 
-    var originalSync = Backbone.sync;
+    originalSync = Backbone.sync;
 
     Backbone.sync = function (method, model, options) {
         if (method === "read") {

@@ -13,7 +13,6 @@ define(function (require) {
             this.$el.empty();
             _.each(this.collection.models, function (twitterUser) {
                 this.$el.append(new TwitterUserTemplate({model:twitterUser}).render().el);
-                console.log(twitterUser);
             }, this);
             return this;
         }

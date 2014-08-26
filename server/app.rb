@@ -51,7 +51,7 @@ get '/api/sprout-user' do
 end
 
 get '/api/lists' do
-  jsonp  "[" +twitter_client.lists.map(&:attrs) +"]"
+  jsonp twitter_client.lists.map(&:attrs)
 end
 
 get '/api/lists/:user_id' do
@@ -83,7 +83,7 @@ post '/api/users/lookup' do
 end
 
 get '/api/users/lookup' do
-  jsonp  twitter_client.users('heyellieday, SproutHomework').map(&:attrs)
+  jsonp  twitter_client.friends.map(&:attrs)
 end
 
 get '/api/users/lookup/:user_id' do
