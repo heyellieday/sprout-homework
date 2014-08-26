@@ -17,10 +17,33 @@ Setup instructions:
 ---------------------
 
 Requirements to begin setup of this app:
-	* NodeJS - google installing NodeJS on your operating system.
-	* Grunt - Once node is installed, sudo npm install -g grunt-cli
-	* bower  Once node is installed, sudo npm install -g bower install
-	* Compass - gem install compass
+
+NodeJS google installing NodeJS on your operating system.
+
+
+Grunt:
+
+Once node is installed type
+
+```
+sudo npm install -g grunt-cli
+```
+
+Bower  Once node is installed, type
+
+```
+sudo npm install -g bower install
+```
+
+
+Compass - type: 
+
+```
+gem install compass
+```
+
+
+
 
 There are two parts you need to setup after you have cloned the git repo: the client side of the app and the server side.
 
