@@ -90,4 +90,4 @@ Lastly, type
 shotgun app.rb to start the API server.
 ```
 
-Navigate to http:localhost:9000 and enjoy the app!
+Navigate to http://localhost:9000 and enjoy the app!
