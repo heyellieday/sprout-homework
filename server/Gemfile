@@ -6,3 +6,4 @@ gem 'sinatra-jsonp'
 gem 'twitter'
 gem 'shotgun'
 gem 'omniauth-twitter'
+gem "sinatra-cross_origin"

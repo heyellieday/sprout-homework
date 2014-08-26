@@ -15,8 +15,9 @@ define(function (require) {
             this.model.on("change", this.render, this);
         },
 
-        render: function () {
-            console.log(this.model.attributes);
+        render: function (isUserInList) {
+            this.model.attributes["isUserInList"] = isUserInList;
+            console.log(isUserInList);
             this.$el.html(Handlebars(this.model.attributes));
             return this;
         }

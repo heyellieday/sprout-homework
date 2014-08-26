@@ -5,8 +5,11 @@ require 'twitter'
 require 'omniauth-twitter'
 require 'json'
 
+require 'sinatra/cross_origin'
+
 configure do
   enable :sessions
+  enable :cross_origin
 end
 
 helpers Sinatra::Jsonp
@@ -62,20 +65,21 @@ get '/api/followers/list' do
   jsonp  twitter_client.followers.map(&:attrs)
 end
 
-get '/api/is/user/:user_id/in/list/:list_id' do
-  jsonp  twitter_client.list_members(:list_id).map(&:attrs)
-end
-
 get'/api/lists/:list_id/members/owned/:list_owner' do
   jsonp  twitter_client.list_members(params[:list_owner].to_s ,params[:list_id].to_s.to_i).map(&:attrs)
 end
 
-delete '/api/twitter/user/:user_id/in/list/:list_id/' do
-  jsonp  twitter_client.list_members(:user_id, :list_id).map(&:attrs)
+get '/api/is/user/:user_id/in/list/:list_id' do
+  jsonp  twitter_client.list_member?(params[:list_id].to_s.to_i, params[:user_id])
+
 end
 
-put '/api/twitter/user/:user_id/in/list/:list_id' do
-  jsonp  twitter_client.add_list_member(:list_id, :user_id).map(&:attrs)
+get '/api/twitter/add/user/:user_id/in/list/:list_id/' do
+  jsonp  twitter_client.add_list_member(params[:list_id].to_s.to_i, params[:user_id]).attrs
+end
+
+get '/api/twitter/remove/user/:user_id/in/list/:list_id' do
+  jsonp  twitter_client.remove_list_member(params[:list_id].to_s.to_i, params[:user_id]).attrs
 end
 
 post '/api/users/lookup' do
@@ -83,7 +87,7 @@ post '/api/users/lookup' do
 end
 
 get '/api/users/lookup' do
-  jsonp  twitter_client.friends.map(&:attrs)
+  jsonp  twitter_client.users('heyellieday, SproutHomework').map(&:attrs)
 end
 
 get '/api/users/lookup/:user_id' do
