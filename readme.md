@@ -87,7 +87,7 @@ bundle install
 Lastly, type 
 
 ```
-shotgun app.rb to start the API server.
+shotgun app.rb
 ```
 
-Navigate to http://localhost:9000 and enjoy the app!
+which will start the API server. Navigate to http://localhost:9000 and enjoy the app!
