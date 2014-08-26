@@ -6,12 +6,29 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
     background-color: green;
 }
 
+.navImg{
+    display:inline;
+    width:30px;
+}
+
+.img-profile{
+    margin: auto;
+}
+
+.profile{
+    margin-top:10px !important;
+    display:inline;
+}
 .caption{
     text-align:center;
 }
 
 .img-profile{
     margin-top:15px;
+}
+
+.navbar-inverse .navbar-nav > li > .profile {
+    margin-top:5px !important;
 }
 
 #lists{

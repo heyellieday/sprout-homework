@@ -4,7 +4,6 @@ require 'rubygems'
 require 'twitter'
 require 'omniauth-twitter'
 require 'json'
-
 require 'sinatra/cross_origin'
 
 configure do
@@ -74,7 +73,7 @@ get '/api/is/user/:user_id/in/list/:list_id' do
 
 end
 
-get '/api/twitter/add/user/:user_id/in/list/:list_id/' do
+get '/api/twitter/add/user/:user_id/in/list/:list_id' do
   jsonp  twitter_client.add_list_member(params[:list_id].to_s.to_i, params[:user_id]).attrs
 end
 
@@ -87,7 +86,7 @@ post '/api/users/lookup' do
 end
 
 get '/api/users/lookup' do
-  jsonp  twitter_client.users('heyellieday, SproutHomework').map(&:attrs)
+  jsonp  twitter_client.users('heyellieday, SproutHomework, SproutSocial').map(&:attrs)
 end
 
 get '/api/users/lookup/:user_id' do

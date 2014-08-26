@@ -11,14 +11,16 @@ So that's what it does!
 But how?
 ---------------------
 
-It's built with Backbone using a Sinatra based API to connect to Twitter, RequireJS for awesome organization, Handlebars for some sweet templating, jQuery for all that DOM manipulation, and of course Bootstrap since I didn't feel like writing CSS.
+It's built with Backbone using a Sinatra based API to connect to Twitter, RequireJS for awesome organization, Handlebars for some sweet templating, jQuery for all that DOM manipulation, and of course Bootstrap since I didn't feel like writing much CSS ;)
 
 Setup instructions:
 ---------------------
 
 Requirements to begin setup of this app:
 
-NodeJS google installing NodeJS on your operating system.
+NodeJS:
+
+Google installing NodeJS on your operating system.
 
 
 Grunt:
@@ -29,14 +31,18 @@ Once node is installed type
 sudo npm install -g grunt-cli
 ```
 
-Bower  Once node is installed, type
+Bower:
+
+ Once node is installed, type
 
 ```
 sudo npm install -g bower install
 ```
 
 
-Compass - type: 
+Compass:
+
+type
 
 ```
 gem install compass
@@ -45,7 +51,7 @@ gem install compass
 
 
 
-There are two parts you need to setup after you have cloned the git repo: the client side of the app and the server side.
+There are two parts you need to setup after you done the above steps: the client side of the app and the server side.
 
 Client Side
 ---------------------
